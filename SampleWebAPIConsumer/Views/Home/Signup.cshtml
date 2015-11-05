@@ -1,0 +1,41 @@
+﻿@model SampleWebAPIConsumer.Models.SignupModel
+@{
+    ViewBag.Title = "Register your interest";
+}
+
+
+<div class="row">
+    <div class="col-lg-6 col-lg-push-3">
+        <h3>Register your interest in Acme! Co's new product:</h3>
+        <p>
+            Please fill in your name, and at least one method to contact you, so you can stay in the loop about Acme! Co's exciting new product.
+        </p>
+        @using (Html.BeginForm("Signup", "Home", FormMethod.Post, new { @class="form-horizontal" }))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Name" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", placeholder = "Phone Number" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmailAddress, new { @class = "col-sm-3 control-label" })
+                <div class="col-sm-9">
+                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", placeholder = "Email Address" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
